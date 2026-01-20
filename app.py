@@ -15,7 +15,6 @@ def predict():
     features = [np.array(float_feature)]
     prediction = model.predict(features)[0]
 
-    # This renders index.html but tells it to show the result-page
     return render_template("index.html", 
                            show="result", 
                            prediction_text=prediction)
@@ -24,4 +23,5 @@ if __name__ == "__main__":
     flask_app.run(debug=True)
 
 #python "C:\Anjali\crop recc\app.py"
+#python "C:\Anjali\python\projects\crop recc\app.py"
 
