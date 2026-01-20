@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1Rf2E4z6zQ5flBg49_zcYscWv25hGEDUD
 """
 import pickle
-import pandas as pd # pyright: ignore[reportMissingModuleSource]
+import pandas as pd 
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 
@@ -20,9 +20,9 @@ data.shape
 
 data.isnull().sum()
 
-#split features and lablels
-x=data.iloc[:,:-1]#features
-y=data.iloc[:,-1]#labels
+
+x=data.iloc[:,:-1]
+y=data.iloc[:,-1]
 
 x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2,random_state=42)
 
@@ -38,7 +38,7 @@ pickle.dump(model,open("model.pkl","wb"))
 
 predictions=model.predict(x_test)
 
-#comparing model's predictions with actual predictions
+
 accuracy=model.score(x_test,y_test)
 print(accuracy)
 
